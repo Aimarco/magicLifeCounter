@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+    >
+<RelativeLayout
+    android:id="@+id/opponent"
+    android:rotation="180"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1"
+    android:background="@drawable/fly"
+    >
+
+    <ImageView
+        android:id="@+id/playerBlood"
+        android:layout_width="108dp"
+        android:layout_height="131dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="60dp"
+        app:srcCompat="@drawable/venom" />
+    <TextView
+        android:id="@+id/lifeCounterPl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="85dp"
+        android:text="20"
+        android:textColor="@color/colorWhite"
+        android:fontFamily="sans-serif-thin"
+        android:layout_marginBottom="60dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="150dp"
+        android:textStyle="bold"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        android:text="@string/pganadas"
+        android:textColor="@color/colorWhite"
+        android:fontFamily="sans-serif-thin"
+        android:layout_marginBottom="50dp"
+        android:layout_marginStart="280dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="150dp"
+        android:textStyle="bold"/>
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="85dp"
+        android:text="0"
+        android:inputType="number"
+        android:textColor="@color/colorWhite"
+        android:fontFamily="sans-serif-thin"
+        android:layout_marginBottom="60dp"
+        android:layout_marginStart="350dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="150dp"
+        android:textStyle="bold"/>
+
+
+    <View
+        android:id="@+id/emptyviewOp"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        />
+
+    <Button
+        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:layout_toLeftOf="@id/emptyviewOp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorGreen"
+        android:textColor="@color/colorWhite"
+        android:text="@string/addLife"
+        />
+    <Button
+        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:layout_toRightOf="@id/emptyviewOp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorRed"
+        android:textColor="@color/colorWhite"
+        android:text="@string/removeLife"
+        />
+
+</RelativeLayout>
+<RelativeLayout
+    android:id="@+id/player"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1"
+    android:background="@drawable/merfolk"
+    >
+
+
+    <View
+        android:id="@+id/emptyview"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        />
+
+    <ImageView
+        android:id="@+id/imgBloodOp"
+        android:layout_width="108dp"
+        android:layout_height="131dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="60dp"
+        app:srcCompat="@drawable/blood" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        android:text="@string/pganadas"
+        android:textColor="@color/colorWhite"
+        android:fontFamily="sans-serif-thin"
+        android:layout_marginBottom="50dp"
+        android:layout_marginStart="280dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="150dp"
+        android:textStyle="bold"/>
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="85dp"
+        android:text="0"
+        android:inputType="number"
+        android:textColor="@color/colorWhite"
+        android:fontFamily="sans-serif-thin"
+        android:layout_marginBottom="60dp"
+        android:layout_marginStart="350dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="150dp"
+        android:textStyle="bold"/>
+
+
+    <TextView
+        android:id="@+id/lifeCounterOp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="85dp"
+        android:text="20"
+        android:textColor="@color/colorWhite"
+        android:fontFamily="sans-serif-thin"
+        android:layout_marginBottom="60dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="150dp"
+        android:textStyle="bold"
+        />
+
+    <Button
+        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:layout_toLeftOf="@id/emptyview"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorRed"
+        android:textColor="@color/colorWhite"
+        android:text="@string/removeLife"
+        />
+    <Button
+        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:layout_toRightOf="@id/emptyview"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorGreen"
+        android:textColor="@color/colorWhite"
+        android:text="@string/addLife"
+        />
+
+</RelativeLayout>
+</LinearLayout>

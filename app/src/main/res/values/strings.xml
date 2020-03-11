@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MagicLifeCounter</string>
+    <string name="pganadas">Ganadas </string>
+    <string name="addLife">Sumar vida </string>
+    <string name="removeLife">Quitar vida </string>
+
+
+</resources>
