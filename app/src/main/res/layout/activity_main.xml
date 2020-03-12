@@ -61,7 +61,7 @@
             android:layout_marginBottom="60dp"
             android:fontFamily="sans-serif-thin"
             android:inputType="number"
-            android:text="0"
+            android:hint="0"
             android:textColor="@color/colorWhite"
             android:textSize="85dp"
             android:textStyle="bold" />
@@ -143,7 +143,7 @@
             android:layout_marginBottom="60dp"
             android:fontFamily="sans-serif-thin"
             android:inputType="number"
-            android:text="0"
+            android:hint="0"
             android:textColor="@color/colorWhite"
             android:textSize="85dp"
             android:textStyle="bold" />

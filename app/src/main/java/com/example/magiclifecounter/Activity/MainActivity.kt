@@ -1,7 +1,9 @@
-package com.example.magiclifecounter
+package com.example.magiclifecounter.Activity
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -11,9 +13,13 @@ import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.*
+import com.example.magiclifecounter.Adapter.ImageList
+import com.example.magiclifecounter.R
 
 class MainActivity : AppCompatActivity() {
-
+    private val ACTIVIDAD_PLAYER = 0
+    private val ACTIVIDAD_OPONENT = 1
+    private val EXTRA_TASK_DESCRYPTION = 1
     lateinit var btnAddLifePlayer:Button
     lateinit var btnRemoveLifePlayer:Button
     lateinit var btnAddLifeOponent:Button
@@ -50,9 +56,18 @@ class MainActivity : AppCompatActivity() {
         btnRemoveLifePlayer = findViewById(R.id.btnRemoveLifesPl)
         btnRemoveLifeOponent = findViewById(R.id.btnRemoveLifesOp)
         oponentView.setOnLongClickListener {
-          val  intent: Intent = Intent(this, changeImageActivity::class.java)
-            startActivity(intent)
+          var  intent: Intent = Intent(this, ImageList::class.java)
+            intent.putExtra("selectedView", "oponent")
+            startActivityForResult(intent, ACTIVIDAD_OPONENT)
             return@setOnLongClickListener true
+        }
+
+        playerView.setOnLongClickListener {
+            val  intent: Intent = Intent(this, ImageList::class.java)
+            intent.putExtra("selectedView", "player")
+            startActivityForResult(intent, ACTIVIDAD_PLAYER)
+            return@setOnLongClickListener true
+
         }
 
         imgBloodPlayer.setOnClickListener{swapBloodImagePlayer()}
@@ -63,6 +78,19 @@ class MainActivity : AppCompatActivity() {
         btnRemoveLifePlayer.setOnClickListener { removeLife(btnAddLifePlayer.id.toString()) }
         btnRemoveLifeOponent.setOnClickListener { removeLife(btnAddLifeOponent.id.toString()) }
     }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+
+        val returnString :Int = data!!.getIntExtra("resource",0)
+            if (requestCode == ACTIVIDAD_OPONENT)
+                oponentView.background = resources.getDrawable(returnString)
+            else if (requestCode == ACTIVIDAD_PLAYER)
+                playerView.background = resources.getDrawable(returnString)
+    }
+
+
 
     public fun swapBloodImagePlayer(){
         Toast.makeText(this,"pulsada imagen", Toast.LENGTH_SHORT).show()
